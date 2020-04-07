@@ -2,11 +2,11 @@
 
 Configurar Ambiente:
 
-Programas Necessários: node, mysql
+Programas Necessários: node, mysql ou mysql Workbench
 
-1º Instalar Node. 
+1º Instalar Node - Link: https://nodejs.org/en/download/.
 2º Instalar Dependencias do node para este projeto: "npm install".
-3º Instalar MYSQL porta 3306.
+3º Instalar MYSQL Workbench porta 3306 - Link: https://dev.mysql.com/downloads/workbench/.
 4º Criar banco de dados nome: "caixavirtual".
 5º Criar tabelas: categorias, movimentacoes, usuarios.
    
@@ -57,6 +57,11 @@ Programas Necessários: node, mysql
             
             GET - STATUS 200 - Retorna um objeto contendo o saldo total ja somado ENTRADAS e diminuido as SAIDAS 
             e um array de objetos referente as movimentacoes do usuário.
+            
+            NECESSARIO: enviar header "Authorization" como conteúdo o email do usuario.
+            Ex: Key: Authorization
+                Value: douglas.sumita@gmail.com
+            
             OBJETO DE RETORNO:
             {
                 "saldoTotal": 5,
