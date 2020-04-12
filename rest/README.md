@@ -7,8 +7,9 @@ Programas Necessários: node, mysql ou mysql Workbench
 1º Instalar Node - Link: https://nodejs.org/en/download/.
 2º Instalar Dependencias do node para este projeto: "npm install".
 3º Instalar MYSQL Workbench porta 3306 - Link: https://dev.mysql.com/downloads/workbench/.
-4º Criar banco de dados nome: "caixavirtual".
-5º Criar tabelas: categorias, movimentacoes, usuarios.
+  3.1 - Configurar banco com senha: "senha1".
+4º Criar banco de dados nome: "caixavirtual", ("CREATE DATABASE caixavirtual;").
+5º Criar tabelas: categorias, movimentacoes.
    
     categorias = {
       CREATE TABLE `categorias` (
