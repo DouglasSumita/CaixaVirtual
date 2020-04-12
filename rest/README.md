@@ -11,17 +11,26 @@ Programas Necessários: node, mysql ou mysql Workbench
 5º Criar tabelas: categorias, movimentacoes, usuarios.
    
     categorias = {
-        id int primary key not null auto_increment,
-        name varchar(45) default null
+      CREATE TABLE `categorias` (
+        `id` int NOT NULL AUTO_INCREMENT,
+        `name` varchar(45) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+      ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
     }
     
     movimentacoes = {
-        id int primary key not null auto_increment,
-        descricao varchar(45) default null,
-        tipo varchar(45) default null,
-        valor double not null,
-        id_categoria not null foreign key -> caregorias(id),
-        usuario varchar(60) default null 
+      CREATE TABLE `movimentacoes` (
+        `id` int NOT NULL AUTO_INCREMENT,
+        `descricao` varchar(45) DEFAULT NULL,
+        `id_categoria` int NOT NULL,
+        `valor` double NOT NULL,
+        `tipo` varchar(45) DEFAULT NULL,
+        `data` date DEFAULT NULL,
+        `usuario` varchar(60) NOT NULL,
+        PRIMARY KEY (`id`),
+        KEY `id_categoria_idx` (`id_categoria`),
+        CONSTRAINT `id_categoria` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`)
+      ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
     }
 
 6º Inserção/Listagem de dados
